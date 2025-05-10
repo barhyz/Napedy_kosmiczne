@@ -18,12 +18,12 @@ enthalpy_formation= [-238.4;
 % oxid_enthalpy = -238.4;
 fuel_no=5;
 
-o_f = linspace(1,8,51);
-press = linspace(20,80,5);
+o_f = linspace(1,12,51);
+press = linspace(5,60,51);
 
 x=CEA('problem','hp','equilibrium','o/f',o_f,'case','CEAM-HP1','p,bar',press, ...
-    'reactants','fuel','Amoniak','C',3,'H',8,'wt%',100,'h,kJ/mol',enthalpy_formation(fuel_no),'t(k)',293, ...
-    'oxid','N2O','N',2,'O',1,'wt%',100,'h,kJ/mol',82.05,'t(k)',293,...
+    'reactants','fuel','Amoniak','C',3,'H',8,'wt%',100,'h,kJ/mol',enthalpy_formation(fuel_no),'t(k)',300, ...
+    'oxid','N2O','N',2,'O',1,'wt%',100,'h,kJ/mol',82.05,'t(k)',300,...
     'output','transport','end');
 
 temp=x.output.temperature;
@@ -64,16 +64,3 @@ legend('p=20[bar]','p=35[bar]','p=50[bar]','p=65[bar]','p=80[bar]');
 saveas(f2,strcat('output_n2o\',fuels(fuel_no),'_temp.png'));
 saveas(f2,strcat('output_n2o\',fuels(fuel_no),'_temp.fig'));
 save(strcat('output_n2o\',fuels(fuel_no),'.mat'),'x');
-
-%% Hot fire
-o_f = linspace(1,8,51);
-press = linspace(20,80,5);
-
-
-
-x=CEA('problem','hp','equilibrium','o/f',o_f,'case','CEAM-HP1','p,bar',press, ...
-    'reactants','fuel','Amoniak','C',3,'H',8,'wt%',100,'h,kJ/mol',enthalpy_formation(fuel_no),'t(k)',293, ...
-    'oxid','N2O','N',2,'O',1,'wt%',100,'h,kJ/mol',82.05,'t(k)',293,...
-    'output','transport','end');
-
-
