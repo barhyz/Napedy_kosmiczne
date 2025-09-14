@@ -1,0 +1,3533 @@
+*******************************************************************************
+           NASA-MSFC CHEMICAL EQUILIBRIUM PROGRAM CEA IN MATLAB 
+            BY SAM KOBLISKA, ERC INC., JACOBS ESSSA, NASA MSFC 
+    REFERENCES: NASA RP-1311, PART I, 1994, NASA RP-1311, PART II, 1996
+                 REFERENCES: NASA RP-1311, PART III, 2016
+                   Version: 1.0.0.0, February 7, 2017
+              Library Version: 1.0, Library Date: February 5, 2016
+                     Time Stamp: 01-Jun-2025 00:08:43
+*******************************************************************************
+
+PROBLEM hp
+equilibrium     
+Case = CEAM-HP1        
+o/f = 3 3.14 3.28 3.42 3.56 3.7 3.84 3.98 4.12 4.26
+4.4 4.54 4.68 4.82 4.96 5.1 5.24 5.38 5.52 5.66
+5.8 5.94 6.08 6.22 6.36 6.5 6.64 6.78 6.92 7.06
+7.2 7.34 7.48 7.62 7.76 7.9 8.04 8.18 8.32 8.46
+8.6 8.74 8.88 9.02 9.16 9.3 9.44 9.58 9.72 9.86
+10 
+p,bar = 30 
+REACTANTS
+fuel = ABS, C = 3.85, H = 4.85, N = 0.85, wt% = 100, h,kj/mol = -162.63, t(k) = 300
+oxid = N2O, N = 2, O = 1, wt% = 100, h,kj/mol = 82.05, t(k) = 300
+END
+
+
+OPTIONS: TP=F  HP=T  SP=F  TV=F  UV=F  SV=F  DETONATION=F  SHOCK=F  REFL=F
+INCD=F  ROCKET=F  FROZEN=F  EQUILIBRIUM=T  IONS=F  MKS/SI UNIT=F  CGS UNIT=F
+ENGLISH UNIT=F  DEFAULT UNIT=T  CALORIE UNIT=F  DEBUGF=F  SHOCK DEBUG=F
+DETONATION DEBUG=F  TRANSPORT=F
+
+TRACE= 5.00e-06  S/R= 0.000000e+00  H/R= 0.000000e+00  U/R= 0.000000e+00
+
+P(bar)=       30
+
+    REACTANT          WT.FRAC   (ENERGY/R),K   TEMP,K  DENSITY
+        EXPLODED FORMULA
+   FUEL:        ABS  1.000000 -1.955978e+04   300.00  0.0000
+           C 3.85000   H 4.85000   N 0.85000
+OXIDANT:        N2O  1.000000 9.868290e+03   300.00  0.0000
+           N 2.00000   O 1.00000
+
+  SPECIES BEING CONSIDERED IN THIS SYSTEM
+ (CONDENSED PHASE MAY HAVE NAME LISTED SEVERAL TIMES)
+
+  *C               *CH              CH2              CH3            
+  CH2OH            CH3O             CH4              CH3OH          
+  CH3OOH           *CN              CNN              *CO            
+  *CO2             COOH             *C2              C2H            
+  C2H2,acetylene   C2H2,vinylidene  CH2CO,ketene     O(CH)2O        
+  HO(CO)2OH        C2H3,vinyl       CH3CN            CH3CO,acetyl   
+  C2H4             C2H4O,ethylen-o  CH3CHO,ethanal   CH3COOH        
+  OHCH2COOH        C2H5             C2H6             CH3N2CH3       
+  C2H5OH           CH3OCH3          CH3O2CH3         CCN            
+  CNC              OCCN             C2N2             C2O            
+  *C3              C3H3,1-propynl   C3H3,2-propynl   C3H4,allene    
+  C3H4,propyne     C3H4,cyclo-      C3H5,allyl       C3H6,propylene 
+  C3H6,cyclo-      C3H6O,propylox   C3H6O,acetone    C3H6O,propanal 
+  C3H7,n-propyl    C3H7,i-propyl    C3H8             C3H8O,1propanol
+  C3H8O,2propanol  CNCOCN           C3O2             *C4            
+  C4H2,butadiyne   C4H4,1,3-cyclo-  C4H6,butadiene   C4H6,1butyne   
+  C4H6,2butyne     C4H6,cyclo-      C4H8,1-butene    C4H8,cis2-buten
+  C4H8,tr2-butene  C4H8,isobutene   C4H8,cyclo-      (CH3COOH)2     
+  C4H9,n-butyl     C4H9,i-butyl     C4H9,s-butyl     C4H9,t-butyl   
+  C4H10,n-butane   C4H10,isobutane  C4N2             *C5            
+  C5H6,1,3cyclo-   C5H8,cyclo-      C5H10,1-pentene  C5H10,cyclo-   
+  C5H11,pentyl     C5H11,t-pentyl   C5H12,n-pentane  C5H12,i-pentane
+  CH3C(CH3)2CH3    C6H2             C6H5,phenyl      C6H5O,phenoxy  
+  C6H6             C6H5OH,phenol    C6H10,cyclo-     C6H12,1-hexene 
+  C6H12,cyclo-     C6H13,n-hexyl    C6H14,n-hexane   C7H7,benzyl    
+  C7H8             C7H8O,cresol-mx  C7H14,1-heptene  C7H15,n-heptyl 
+  C7H16,n-heptane  C7H16,2-methylh  C8H8,styrene     C8H10,ethylbenz
+  C8H16,1-octene   C8H17,n-octyl    C8H18,n-octane   C8H18,isooctane
+  C9H19,n-nonyl    C10H8,naphthale  C10H21,n-decyl   C12H9,o-bipheny
+  C12H10,biphenyl  *H               HCN              HCO            
+  HCCN             HCCO             HNC              HNCO           
+  HNO              HNO2             HNO3             HO2            
+  *H2              HCHO,formaldehy  HCOOH            H2O            
+  H2O2             (HCOOH)2         *N               NCO            
+  *NH              NH2              NH3              NH2OH          
+  *NO              NO2              NO3              *N2            
+  NCN              N2H2             NH2NO2           N2H4           
+  N2O              N2O3             N2O4             N2O5           
+  N3               N3H              *O               *OH            
+  *O2              O3               C(gr)            C(gr)          
+  C(gr)            H2O(cr)          H2O(L)           H2O(L)         
+  H2O(S)           
+
+ O/F =   3.000000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      1.52691982e-02
+               *H      7.69408948e-02      0.00000000e+00      1.92352237e-02
+               *N      1.34844867e-02      4.54413262e-02      3.74521163e-02
+               *O      0.00000000e+00      2.27206631e-02      1.70404973e-02
+
+ POINT ITN      T             C           H           N           O        
+   1   20    2257.404      -8.837      -9.066     -12.401     -22.853
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    3.00000  %FUEL= 25.000000  R,EQ.RATIO= 2.356504  PHI,EQ.RATIO= 2.356504
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    2257.40
+    RHO(kg/m^3):     3.6640
+       H(kJ/kg):     753.18
+       U(kJ/kg):     -65.61
+       G(kJ/kg):   -21832.3
+     S(kJ/kg-K):    10.0051
+
+        M (1/n):     22.923
+     (dLV/dLP)t:   -1.00022
+     (dLV/dLT)p:     1.0040
+    Cp(kJ/kg-K):     1.6512
+         Gammas:     1.2840
+   SON VEL(m/s):     1025.3
+
+ MOLE FRACTIONS
+
+            *CO:    0.33994 
+           *CO2:    0.01004 
+             *H:    0.00062 
+            HCN:    0.00003 
+            *H2:    0.18951 
+            H2O:    0.03059 
+            NH3:    0.00002 
+            *N2:    0.42923 
+            *OH:    0.00002 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   3.140000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      1.47528485e-02
+               *H      7.69408948e-02      0.00000000e+00      1.85847572e-02
+               *N      1.34844867e-02      4.54413262e-02      3.77222828e-02
+               *O      0.00000000e+00      2.27206631e-02      1.72325802e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    4    2346.705      -9.663      -9.177     -12.457     -21.973
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    3.14000  %FUEL= 24.154589  R,EQ.RATIO= 2.251437  PHI,EQ.RATIO= 2.251437
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    2346.71
+    RHO(kg/m^3):     3.5819
+       H(kJ/kg):     753.18
+       U(kJ/kg):     -84.37
+       G(kJ/kg):   -22666.1
+     S(kJ/kg-K):     9.9797
+
+        M (1/n):     23.296
+     (dLV/dLP)t:   -1.00029
+     (dLV/dLT)p:     1.0059
+    Cp(kJ/kg-K):     1.6621
+         Gammas:     1.2771
+   SON VEL(m/s):     1034.2
+
+ MOLE FRACTIONS
+
+            *CO:    0.32926 
+           *CO2:    0.01439 
+             *H:    0.00093 
+            HCN:    0.00002 
+            *H2:    0.17260 
+            H2O:    0.04335 
+            NH3:    0.00002 
+            *N2:    0.43937 
+            *OH:    0.00004 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   3.280000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      1.42702787e-02
+               *H      7.69408948e-02      0.00000000e+00      1.79768446e-02
+               *N      1.34844867e-02      4.54413262e-02      3.79747749e-02
+               *O      0.00000000e+00      2.27206631e-02      1.74120969e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    4    2430.347     -10.348      -9.285     -12.508     -21.251
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    3.28000  %FUEL= 23.364486  R,EQ.RATIO= 2.155339  PHI,EQ.RATIO= 2.155339
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    2430.35
+    RHO(kg/m^3):     3.5118
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -101.08
+       G(kJ/kg):   -23431.9
+     S(kJ/kg-K):     9.9513
+
+        M (1/n):     23.655
+     (dLV/dLP)t:   -1.00039
+     (dLV/dLT)p:     1.0083
+    Cp(kJ/kg-K):     1.6761
+         Gammas:     1.2703
+   SON VEL(m/s):     1041.7
+
+ MOLE FRACTIONS
+
+            *CO:    0.31872 
+           *CO2:    0.01882 
+             *H:    0.00133 
+            HCN:    0.00001 
+            *H2:    0.15647 
+            H2O:    0.05540 
+            NH3:    0.00001 
+            *NO:    0.00001 
+            *N2:    0.44912 
+            *OH:    0.00010 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   3.420000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      1.38182789e-02
+               *H      7.69408948e-02      0.00000000e+00      1.74074423e-02
+               *N      1.34844867e-02      4.54413262e-02      3.82112720e-02
+               *O      0.00000000e+00      2.27206631e-02      1.75802416e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    4    2508.704     -10.942      -9.390     -12.554     -20.633
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    3.42000  %FUEL= 22.624434  R,EQ.RATIO= 2.067109  PHI,EQ.RATIO= 2.067109
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    2508.70
+    RHO(kg/m^3):     3.4516
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -115.97
+       G(kJ/kg):   -24135.6
+     S(kJ/kg-K):     9.9210
+
+        M (1/n):     23.999
+     (dLV/dLP)t:   -1.00053
+     (dLV/dLT)p:     1.0114
+    Cp(kJ/kg-K):     1.6938
+         Gammas:     1.2637
+   SON VEL(m/s):     1048.0
+
+ MOLE FRACTIONS
+
+            *CO:    0.30821 
+           *CO2:    0.02340 
+             *H:    0.00179 
+            HCN:    0.00001 
+            *H2:    0.14119 
+            H2O:    0.06667 
+            NH3:    0.00001 
+            *NO:    0.00002 
+            *N2:    0.45849 
+            *OH:    0.00020 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   3.560000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      1.33940335e-02
+               *H      7.69408948e-02      0.00000000e+00      1.68730032e-02
+               *N      1.34844867e-02      4.54413262e-02      3.84332473e-02
+               *O      0.00000000e+00      2.27206631e-02      1.77380615e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    4    2582.078     -11.472      -9.492     -12.596     -20.092
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    3.56000  %FUEL= 21.929825  R,EQ.RATIO= 1.985818  PHI,EQ.RATIO= 1.985818
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    2582.08
+    RHO(kg/m^3):     3.3998
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -129.24
+       G(kJ/kg):   -24782.1
+     S(kJ/kg-K):     9.8894
+
+        M (1/n):     24.329
+     (dLV/dLP)t:   -1.00070
+     (dLV/dLT)p:     1.0151
+    Cp(kJ/kg-K):     1.7159
+         Gammas:     1.2571
+   SON VEL(m/s):     1053.2
+
+ MOLE FRACTIONS
+
+            *CO:    0.29766 
+           *CO2:    0.02820 
+             *H:    0.00232 
+            HCN:    0.00001 
+            *H2:    0.12680 
+            H2O:    0.07710 
+            NH3:    0.00001 
+            *NO:    0.00004 
+            *N2:    0.46750 
+            *OH:    0.00035 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   3.700000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      1.29950623e-02
+               *H      7.69408948e-02      0.00000000e+00      1.63704031e-02
+               *N      1.34844867e-02      4.54413262e-02      3.86419986e-02
+               *O      0.00000000e+00      2.27206631e-02      1.78864794e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    2650.696     -11.953      -9.594     -12.635     -19.609
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    3.70000  %FUEL= 21.276596  R,EQ.RATIO= 1.910679  PHI,EQ.RATIO= 1.910679
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    2650.70
+    RHO(kg/m^3):     3.3549
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -141.03
+       G(kJ/kg):   -25374.9
+     S(kJ/kg-K):     9.8571
+
+        M (1/n):     24.647
+     (dLV/dLP)t:   -1.00092
+     (dLV/dLT)p:     1.0197
+    Cp(kJ/kg-K):     1.7431
+         Gammas:     1.2505
+   SON VEL(m/s):     1057.5
+
+ MOLE FRACTIONS
+
+            *CO:    0.28703 
+           *CO2:    0.03325 
+             *H:    0.00289 
+            *H2:    0.11335 
+            H2O:    0.08663 
+            NH3:    0.00001 
+            *NO:    0.00008 
+            *N2:    0.47615 
+             *O:    0.00001 
+            *OH:    0.00059 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   3.840000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      1.26191721e-02
+               *H      7.69408948e-02      0.00000000e+00      1.58968791e-02
+               *N      1.34844867e-02      4.54413262e-02      3.88386734e-02
+               *O      0.00000000e+00      2.27206631e-02      1.80263112e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    2714.710     -12.396      -9.693     -12.669     -19.175
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    3.84000  %FUEL= 20.661157  R,EQ.RATIO= 1.841019  PHI,EQ.RATIO= 1.841019
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    2714.71
+    RHO(kg/m^3):     3.3162
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -151.47
+       G(kJ/kg):   -25916.9
+     S(kJ/kg-K):     9.8243
+
+        M (1/n):     24.951
+     (dLV/dLP)t:   -1.00118
+     (dLV/dLT)p:     1.0252
+    Cp(kJ/kg-K):     1.7769
+         Gammas:     1.2437
+   SON VEL(m/s):     1060.7
+
+ MOLE FRACTIONS
+
+            *CO:    0.27627 
+           *CO2:    0.03858 
+             *H:    0.00349 
+            *H2:    0.10088 
+            H2O:    0.09522 
+            NH3:    0.00001 
+            *NO:    0.00015 
+            *N2:    0.48445 
+             *O:    0.00002 
+            *OH:    0.00093 
+            *O2:    0.00001 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   3.980000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      1.22644162e-02
+               *H      7.69408948e-02      0.00000000e+00      1.54499789e-02
+               *N      1.34844867e-02      4.54413262e-02      3.90242901e-02
+               *O      0.00000000e+00      2.27206631e-02      1.81582809e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    2774.192     -12.806      -9.791     -12.701     -18.780
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    3.98000  %FUEL= 20.080321  R,EQ.RATIO= 1.776260  PHI,EQ.RATIO= 1.776260
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    2774.19
+    RHO(kg/m^3):     3.2830
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -160.63
+       G(kJ/kg):   -26409.8
+     S(kJ/kg-K):     9.7913
+
+        M (1/n):     25.242
+     (dLV/dLP)t:   -1.00149
+     (dLV/dLT)p:     1.0320
+    Cp(kJ/kg-K):     1.8186
+         Gammas:     1.2367
+   SON VEL(m/s):     1063.1
+
+ MOLE FRACTIONS
+
+            *CO:    0.26535 
+           *CO2:    0.04422 
+             *H:    0.00408 
+            *H2:    0.08941 
+            H2O:    0.10283 
+            *NO:    0.00025 
+            *N2:    0.49239 
+             *O:    0.00004 
+            *OH:    0.00141 
+            *O2:    0.00002 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   4.120000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      1.19290611e-02
+               *H      7.69408948e-02      0.00000000e+00      1.50275185e-02
+               *N      1.34844867e-02      4.54413262e-02      3.91997560e-02
+               *O      0.00000000e+00      2.27206631e-02      1.82830336e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    2829.139     -13.189      -9.887     -12.729     -18.419
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    4.12000  %FUEL= 19.531250  R,EQ.RATIO= 1.715901  PHI,EQ.RATIO= 1.715901
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    2829.14
+    RHO(kg/m^3):     3.2547
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -168.58
+       G(kJ/kg):   -26854.6
+     S(kJ/kg-K):     9.7584
+
+        M (1/n):     25.520
+     (dLV/dLP)t:   -1.00187
+     (dLV/dLT)p:     1.0401
+    Cp(kJ/kg-K):     1.8703
+         Gammas:     1.2294
+   SON VEL(m/s):     1064.5
+
+ MOLE FRACTIONS
+
+            *CO:    0.25429 
+           *CO2:    0.05013 
+             *H:    0.00465 
+            *H2:    0.07896 
+            H2O:    0.10944 
+            *NO:    0.00041 
+            *N2:    0.49997 
+             *O:    0.00007 
+            *OH:    0.00203 
+            *O2:    0.00004 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   4.260000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      1.16115576e-02
+               *H      7.69408948e-02      0.00000000e+00      1.46275465e-02
+               *N      1.34844867e-02      4.54413262e-02      3.93658814e-02
+               *O      0.00000000e+00      2.27206631e-02      1.84011454e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    2879.482     -13.547      -9.982     -12.754     -18.089
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    4.26000  %FUEL= 19.011407  R,EQ.RATIO= 1.659510  PHI,EQ.RATIO= 1.659510
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    2879.48
+    RHO(kg/m^3):     3.2310
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -175.34
+       G(kJ/kg):   -27251.4
+     S(kJ/kg-K):     9.7256
+
+        M (1/n):     25.785
+     (dLV/dLP)t:   -1.00234
+     (dLV/dLT)p:     1.0501
+    Cp(kJ/kg-K):     1.9340
+         Gammas:     1.2218
+   SON VEL(m/s):     1065.1
+
+ MOLE FRACTIONS
+
+            *CO:    0.24309 
+           *CO2:    0.05630 
+             *H:    0.00518 
+            *H2:    0.06953 
+            H2O:    0.11505 
+            *NO:    0.00064 
+            *N2:    0.50720 
+             *O:    0.00012 
+            *OH:    0.00281 
+            *O2:    0.00008 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   4.400000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      1.13105172e-02
+               *H      7.69408948e-02      0.00000000e+00      1.42483138e-02
+               *N      1.34844867e-02      4.54413262e-02      3.95233929e-02
+               *O      0.00000000e+00      2.27206631e-02      1.85131329e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    2925.110     -13.883     -10.074     -12.777     -17.787
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    4.40000  %FUEL= 18.518519  R,EQ.RATIO= 1.606708  PHI,EQ.RATIO= 1.606708
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    2925.11
+    RHO(kg/m^3):     3.2116
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -180.94
+       G(kJ/kg):   -27600.0
+     S(kJ/kg-K):     9.6930
+
+        M (1/n):     26.036
+     (dLV/dLP)t:   -1.00290
+     (dLV/dLT)p:     1.0622
+    Cp(kJ/kg-K):     2.0119
+         Gammas:     1.2139
+   SON VEL(m/s):     1064.9
+
+ MOLE FRACTIONS
+
+            *CO:    0.23181 
+           *CO2:    0.06266 
+             *H:    0.00564 
+            *H2:    0.06112 
+            H2O:    0.11967 
+            *NO:    0.00095 
+            *N2:    0.51404 
+             *O:    0.00020 
+            *OH:    0.00375 
+            *O2:    0.00015 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   4.540000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      1.10246918e-02
+               *H      7.69408948e-02      0.00000000e+00      1.38882481e-02
+               *N      1.34844867e-02      4.54413262e-02      3.96729436e-02
+               *O      0.00000000e+00      2.27206631e-02      1.86194604e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    2965.905     -14.198     -10.164     -12.796     -17.511
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    4.54000  %FUEL= 18.050542  R,EQ.RATIO= 1.557162  PHI,EQ.RATIO= 1.557162
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    2965.90
+    RHO(kg/m^3):     3.1964
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -185.38
+       G(kJ/kg):   -27900.0
+     S(kJ/kg-K):     9.6609
+
+        M (1/n):     26.274
+     (dLV/dLP)t:   -1.00357
+     (dLV/dLT)p:     1.0768
+    Cp(kJ/kg-K):     2.1055
+         Gammas:     1.2058
+   SON VEL(m/s):     1063.8
+
+ MOLE FRACTIONS
+
+            *CO:    0.22053 
+           *CO2:    0.06913 
+             *H:    0.00602 
+            *H2:    0.05367 
+            H2O:    0.12334 
+            *NO:    0.00136 
+            *N2:    0.52051 
+             *O:    0.00031 
+            *OH:    0.00485 
+            *O2:    0.00028 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   4.680000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      1.07529565e-02
+               *H      7.69408948e-02      0.00000000e+00      1.35459322e-02
+               *N      1.34844867e-02      4.54413262e-02      3.98151220e-02
+               *O      0.00000000e+00      2.27206631e-02      1.87205463e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    3001.787     -14.492     -10.250     -12.812     -17.261
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    4.68000  %FUEL= 17.605634  R,EQ.RATIO= 1.510580  PHI,EQ.RATIO= 1.510580
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    3001.79
+    RHO(kg/m^3):     3.1851
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -188.70
+       G(kJ/kg):   -28151.5
+     S(kJ/kg-K):     9.6292
+
+        M (1/n):     26.499
+     (dLV/dLP)t:   -1.00437
+     (dLV/dLT)p:     1.0940
+    Cp(kJ/kg-K):     2.2157
+         Gammas:     1.1978
+   SON VEL(m/s):     1062.2
+
+ MOLE FRACTIONS
+
+            *CO:    0.20931 
+           *CO2:    0.07562 
+             *H:    0.00630 
+            *H2:    0.04715 
+            H2O:    0.12613 
+            *NO:    0.00188 
+            *N2:    0.52658 
+             *O:    0.00046 
+            *OH:    0.00608 
+            *O2:    0.00048 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   4.820000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      1.04942943e-02
+               *H      7.69408948e-02      0.00000000e+00      1.32200850e-02
+               *N      1.34844867e-02      4.54413262e-02      3.99504603e-02
+               *O      0.00000000e+00      2.27206631e-02      1.88167691e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    3032.758     -14.766     -10.332     -12.826     -17.034
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    4.82000  %FUEL= 17.182131  R,EQ.RATIO= 1.466704  PHI,EQ.RATIO= 1.466704
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    3032.76
+    RHO(kg/m^3):     3.1776
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -190.92
+       G(kJ/kg):   -28355.1
+     S(kJ/kg-K):     9.5980
+
+        M (1/n):     26.709
+     (dLV/dLP)t:   -1.00530
+     (dLV/dLT)p:     1.1139
+    Cp(kJ/kg-K):     2.3415
+         Gammas:     1.1900
+   SON VEL(m/s):     1059.9
+
+ MOLE FRACTIONS
+
+            *CO:    0.19827 
+           *CO2:    0.08202 
+             *H:    0.00650 
+            *H2:    0.04147 
+            H2O:    0.12812 
+            *NO:    0.00251 
+            *N2:    0.53226 
+             *O:    0.00065 
+            *OH:    0.00740 
+            *O2:    0.00079 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   4.960000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      1.02477840e-02
+               *H      7.69408948e-02      0.00000000e+00      1.29095461e-02
+               *N      1.34844867e-02      4.54413262e-02      4.00794403e-02
+               *O      0.00000000e+00      2.27206631e-02      1.89084713e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    3058.934     -15.021     -10.411     -12.837     -16.830
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    4.96000  %FUEL= 16.778523  R,EQ.RATIO= 1.425305  PHI,EQ.RATIO= 1.425305
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    3058.93
+    RHO(kg/m^3):     3.1737
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -192.10
+       G(kJ/kg):   -28512.6
+     S(kJ/kg-K):     9.5673
+
+        M (1/n):     26.906
+     (dLV/dLP)t:   -1.00633
+     (dLV/dLT)p:     1.1360
+    Cp(kJ/kg-K):     2.4802
+         Gammas:     1.1827
+   SON VEL(m/s):     1057.3
+
+ MOLE FRACTIONS
+
+            *CO:    0.18749 
+           *CO2:    0.08823 
+             *H:    0.00659 
+            *H2:    0.03657 
+            H2O:    0.12942 
+            *NO:    0.00324 
+            *N2:    0.53756 
+             *O:    0.00088 
+            *OH:    0.00877 
+            *O2:    0.00123 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   5.100000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      1.00125890e-02
+               *H      7.69408948e-02      0.00000000e+00      1.26132614e-02
+               *N      1.34844867e-02      4.54413262e-02      4.02025000e-02
+               *O      0.00000000e+00      2.27206631e-02      1.89959642e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    3080.549     -15.258     -10.485     -12.846     -16.646
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    5.10000  %FUEL= 16.393443  R,EQ.RATIO= 1.386179  PHI,EQ.RATIO= 1.386179
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    3080.55
+    RHO(kg/m^3):     3.1729
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -192.34
+       G(kJ/kg):   -28626.9
+     S(kJ/kg-K):     9.5373
+
+        M (1/n):     27.089
+     (dLV/dLP)t:   -1.00745
+     (dLV/dLT)p:     1.1597
+    Cp(kJ/kg-K):     2.6275
+         Gammas:     1.1760
+   SON VEL(m/s):     1054.5
+
+ MOLE FRACTIONS
+
+            *CO:    0.17704 
+           *CO2:    0.09419 
+             *H:    0.00661 
+            *H2:    0.03234 
+            H2O:    0.13012 
+            *NO:    0.00407 
+            *N2:    0.54249 
+             *O:    0.00116 
+            *OH:    0.01014 
+            *O2:    0.00183 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   5.240000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      9.78794755e-03
+               *H      7.69408948e-02      0.00000000e+00      1.23302716e-02
+               *N      1.34844867e-02      4.54413262e-02      4.03200378e-02
+               *O      0.00000000e+00      2.27206631e-02      1.90795312e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    3097.939     -15.479     -10.554     -12.852     -16.481
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    5.24000  %FUEL= 16.025641  R,EQ.RATIO= 1.349144  PHI,EQ.RATIO= 1.349144
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    3097.94
+    RHO(kg/m^3):     3.1749
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -191.72
+       G(kJ/kg):   -28701.7
+     S(kJ/kg-K):     9.5079
+
+        M (1/n):     27.260
+     (dLV/dLP)t:   -1.00862
+     (dLV/dLT)p:     1.1843
+    Cp(kJ/kg-K):     2.7779
+         Gammas:     1.1701
+   SON VEL(m/s):     1051.5
+
+ MOLE FRACTIONS
+
+            *CO:    0.16700 
+           *CO2:    0.09981 
+             *H:    0.00655 
+            HO2:    0.00001 
+            *H2:    0.02871 
+            H2O:    0.13033 
+            *NO:    0.00497 
+            *N2:    0.54706 
+             *O:    0.00146 
+            *OH:    0.01148 
+            *O2:    0.00261 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   5.380000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      9.57316501e-03
+               *H      7.69408948e-02      0.00000000e+00      1.20597014e-02
+               *N      1.34844867e-02      4.54413262e-02      4.04324172e-02
+               *O      0.00000000e+00      2.27206631e-02      1.91594306e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    3111.504     -15.684     -10.620     -12.856     -16.333
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    5.38000  %FUEL= 15.673981  R,EQ.RATIO= 1.314036  PHI,EQ.RATIO= 1.314036
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    3111.50
+    RHO(kg/m^3):     3.1795
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -190.38
+       G(kJ/kg):   -28741.3
+     S(kJ/kg-K):     9.4792
+
+        M (1/n):     27.418
+     (dLV/dLP)t:   -1.00978
+     (dLV/dLT)p:     1.2088
+    Cp(kJ/kg-K):     2.9255
+         Gammas:     1.1651
+   SON VEL(m/s):     1048.5
+
+ MOLE FRACTIONS
+
+            *CO:    0.15740 
+           *CO2:    0.10507 
+             *H:    0.00643 
+            HO2:    0.00001 
+            *H2:    0.02558 
+            H2O:    0.13016 
+            *NO:    0.00593 
+            *N2:    0.55132 
+             *O:    0.00178 
+            *OH:    0.01274 
+            *O2:    0.00356 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   5.520000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      9.36760625e-03
+               *H      7.69408948e-02      0.00000000e+00      1.18007507e-02
+               *N      1.34844867e-02      4.54413262e-02      4.05399704e-02
+               *O      0.00000000e+00      2.27206631e-02      1.92358988e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    3121.676     -15.875     -10.681     -12.859     -16.200
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    5.52000  %FUEL= 15.337423  R,EQ.RATIO= 1.280709  PHI,EQ.RATIO= 1.280709
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    3121.68
+    RHO(kg/m^3):     3.1861
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -188.40
+       G(kJ/kg):   -28750.1
+     S(kJ/kg-K):     9.4511
+
+        M (1/n):     27.566
+     (dLV/dLP)t:   -1.01090
+     (dLV/dLT)p:     1.2322
+    Cp(kJ/kg-K):     3.0649
+         Gammas:     1.1608
+   SON VEL(m/s):     1045.5
+
+ MOLE FRACTIONS
+
+            *CO:    0.14827 
+           *CO2:    0.10995 
+             *H:    0.00626 
+            HO2:    0.00001 
+            *H2:    0.02288 
+            H2O:    0.12967 
+            *NO:    0.00692 
+            *N2:    0.55529 
+             *O:    0.00212 
+            *OH:    0.01391 
+            *O2:    0.00471 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   5.660000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      9.17068960e-03
+               *H      7.69408948e-02      0.00000000e+00      1.15526869e-02
+               *N      1.34844867e-02      4.54413262e-02      4.06430019e-02
+               *O      0.00000000e+00      2.27206631e-02      1.93091521e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    3128.880     -16.054     -10.739     -12.860     -16.080
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    5.66000  %FUEL= 15.015015  R,EQ.RATIO= 1.249031  PHI,EQ.RATIO= 1.249031
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    3128.88
+    RHO(kg/m^3):     3.1946
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -185.91
+       G(kJ/kg):   -28732.5
+     S(kJ/kg-K):     9.4237
+
+        M (1/n):     27.702
+     (dLV/dLP)t:   -1.01193
+     (dLV/dLT)p:     1.2538
+    Cp(kJ/kg-K):     3.1919
+         Gammas:     1.1572
+   SON VEL(m/s):     1042.5
+
+ MOLE FRACTIONS
+
+            *CO:    0.13961 
+           *CO2:    0.11444 
+             *H:    0.00605 
+            HO2:    0.00001 
+            *H2:    0.02055 
+            H2O:    0.12895 
+            *NO:    0.00792 
+            *N2:    0.55898 
+             *O:    0.00245 
+            *OH:    0.01497 
+            *O2:    0.00604 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   5.800000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      8.98188129e-03
+               *H      7.69408948e-02      0.00000000e+00      1.13148375e-02
+               *N      1.34844867e-02      4.54413262e-02      4.07417909e-02
+               *O      0.00000000e+00      2.27206631e-02      1.93793891e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    3133.513     -16.222     -10.794     -12.860     -15.972
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    5.80000  %FUEL= 14.705882  R,EQ.RATIO= 1.218882  PHI,EQ.RATIO= 1.218882
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    3133.51
+    RHO(kg/m^3):     3.2045
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -183.00
+       G(kJ/kg):   -28692.5
+     S(kJ/kg-K):     9.3970
+
+        M (1/n):     27.830
+     (dLV/dLP)t:   -1.01285
+     (dLV/dLT)p:     1.2730
+    Cp(kJ/kg-K):     3.3034
+         Gammas:     1.1543
+   SON VEL(m/s):     1039.6
+
+ MOLE FRACTIONS
+
+            *CO:    0.13141 
+           *CO2:    0.11855 
+             *H:    0.00582 
+            HO2:    0.00001 
+            *H2:    0.01852 
+            H2O:    0.12804 
+            *NO:    0.00893 
+            *N2:    0.56244 
+             *O:    0.00278 
+            *OH:    0.01592 
+            *O2:    0.00755 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   5.940000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      8.80069060e-03
+               *H      7.69408948e-02      0.00000000e+00      1.10865843e-02
+               *N      1.34844867e-02      4.54413262e-02      4.08365943e-02
+               *O      0.00000000e+00      2.27206631e-02      1.94467923e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    3135.934     -16.380     -10.846     -12.858     -15.874
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    5.94000  %FUEL= 14.409222  R,EQ.RATIO= 1.190154  PHI,EQ.RATIO= 1.190154
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    3135.93
+    RHO(kg/m^3):     3.2157
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -179.74
+       G(kJ/kg):   -28633.6
+     S(kJ/kg-K):     9.3710
+
+        M (1/n):     27.949
+     (dLV/dLP)t:   -1.01364
+     (dLV/dLT)p:     1.2895
+    Cp(kJ/kg-K):     3.3977
+         Gammas:     1.1520
+   SON VEL(m/s):     1036.7
+
+ MOLE FRACTIONS
+
+            *CO:    0.12367 
+           *CO2:    0.12229 
+             *H:    0.00557 
+            HO2:    0.00001 
+            *H2:    0.01675 
+            H2O:    0.12701 
+            *NO:    0.00992 
+            NO2:    0.00001 
+            *N2:    0.56569 
+             *O:    0.00310 
+            *OH:    0.01674 
+            *O2:    0.00921 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   6.080000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      8.62666564e-03
+               *H      7.69408948e-02      0.00000000e+00      1.08673580e-02
+               *N      1.34844867e-02      4.54413262e-02      4.09276483e-02
+               *O      0.00000000e+00      2.27206631e-02      1.95115299e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    3136.456     -16.531     -10.895     -12.856     -15.784
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    6.08000  %FUEL= 14.124294  R,EQ.RATIO= 1.162749  PHI,EQ.RATIO= 1.162749
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    3136.46
+    RHO(kg/m^3):     3.2279
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -176.21
+       G(kJ/kg):   -28558.9
+     S(kJ/kg-K):     9.3456
+
+        M (1/n):     28.059
+     (dLV/dLP)t:   -1.01429
+     (dLV/dLT)p:     1.3031
+    Cp(kJ/kg-K):     3.4743
+         Gammas:     1.1501
+   SON VEL(m/s):     1033.9
+
+ MOLE FRACTIONS
+
+            *CO:    0.11637 
+           *CO2:    0.12569 
+             *H:    0.00532 
+            HO2:    0.00002 
+            *H2:    0.01519 
+            H2O:    0.12587 
+            *NO:    0.01089 
+            NO2:    0.00001 
+            *N2:    0.56875 
+             *O:    0.00340 
+            *OH:    0.01745 
+            *O2:    0.01103 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   6.220000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      8.45938958e-03
+               *H      7.69408948e-02      0.00000000e+00      1.06566336e-02
+               *N      1.34844867e-02      4.54413262e-02      4.10151711e-02
+               *O      0.00000000e+00      2.27206631e-02      1.95737568e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    3135.351     -16.674     -10.941     -12.853     -15.702
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    6.22000  %FUEL= 13.850416  R,EQ.RATIO= 1.136578  PHI,EQ.RATIO= 1.136578
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    3135.35
+    RHO(kg/m^3):     3.2410
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -172.46
+       G(kJ/kg):   -28471.1
+     S(kJ/kg-K):     9.3209
+
+        M (1/n):     28.163
+     (dLV/dLP)t:   -1.01479
+     (dLV/dLT)p:     1.3138
+    Cp(kJ/kg-K):     3.5334
+         Gammas:     1.1487
+   SON VEL(m/s):     1031.1
+
+ MOLE FRACTIONS
+
+            *CO:    0.10948 
+           *CO2:    0.12876 
+             *H:    0.00505 
+            HO2:    0.00002 
+            *H2:    0.01382 
+            H2O:    0.12467 
+            *NO:    0.01183 
+            NO2:    0.00001 
+            *N2:    0.57163 
+             *O:    0.00367 
+            *OH:    0.01805 
+            *O2:    0.01298 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   6.360000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      8.29847727e-03
+               *H      7.69408948e-02      0.00000000e+00      1.04539259e-02
+               *N      1.34844867e-02      4.54413262e-02      4.10993643e-02
+               *O      0.00000000e+00      2.27206631e-02      1.96336165e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    3132.850     -16.811     -10.986     -12.849     -15.626
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    6.36000  %FUEL= 13.586957  R,EQ.RATIO= 1.111559  PHI,EQ.RATIO= 1.111559
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    3132.85
+    RHO(kg/m^3):     3.2548
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -168.55
+       G(kJ/kg):   -28372.3
+     S(kJ/kg-K):     9.2968
+
+        M (1/n):     28.260
+     (dLV/dLP)t:   -1.01516
+     (dLV/dLT)p:     1.3217
+    Cp(kJ/kg-K):     3.5760
+         Gammas:     1.1475
+   SON VEL(m/s):     1028.5
+
+ MOLE FRACTIONS
+
+            *CO:    0.10299 
+           *CO2:    0.13152 
+             *H:    0.00479 
+            HO2:    0.00002 
+            *H2:    0.01261 
+            H2O:    0.12342 
+            *NO:    0.01274 
+            NO2:    0.00001 
+            *N2:    0.57435 
+             *O:    0.00392 
+            *OH:    0.01855 
+            *O2:    0.01506 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   6.500000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      8.14357237e-03
+               *H      7.69408948e-02      0.00000000e+00      1.02587860e-02
+               *N      1.34844867e-02      4.54413262e-02      4.11804142e-02
+               *O      0.00000000e+00      2.27206631e-02      1.96912413e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    3129.147     -16.943     -11.028     -12.844     -15.556
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    6.50000  %FUEL= 13.333333  R,EQ.RATIO= 1.087617  PHI,EQ.RATIO= 1.087617
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    3129.15
+    RHO(kg/m^3):     3.2691
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -164.51
+       G(kJ/kg):   -28264.4
+     S(kJ/kg-K):     9.2733
+
+        M (1/n):     28.351
+     (dLV/dLP)t:   -1.01540
+     (dLV/dLT)p:     1.3271
+    Cp(kJ/kg-K):     3.6033
+         Gammas:     1.1467
+   SON VEL(m/s):     1025.8
+
+ MOLE FRACTIONS
+
+            *CO:    0.09687 
+           *CO2:    0.13400 
+             *H:    0.00454 
+            HO2:    0.00002 
+            *H2:    0.01153 
+            H2O:    0.12213 
+            *NO:    0.01360 
+            NO2:    0.00001 
+            *N2:    0.57694 
+             *O:    0.00415 
+            *OH:    0.01895 
+            *O2:    0.01724 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   6.640000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      7.99434460e-03
+               *H      7.69408948e-02      0.00000000e+00      1.00707977e-02
+               *N      1.34844867e-02      4.54413262e-02      4.12584938e-02
+               *O      0.00000000e+00      2.27206631e-02      1.97467543e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    3124.406     -17.070     -11.069     -12.839     -15.491
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    6.64000  %FUEL= 13.089005  R,EQ.RATIO= 1.064686  PHI,EQ.RATIO= 1.064686
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    3124.41
+    RHO(kg/m^3):     3.2839
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -160.37
+       G(kJ/kg):   -28149.0
+     S(kJ/kg-K):     9.2505
+
+        M (1/n):     28.436
+     (dLV/dLP)t:   -1.01553
+     (dLV/dLT)p:     1.3300
+    Cp(kJ/kg-K):     3.6168
+         Gammas:     1.1461
+   SON VEL(m/s):     1023.2
+
+ MOLE FRACTIONS
+
+            *CO:    0.09110 
+           *CO2:    0.13622 
+             *H:    0.00428 
+            HO2:    0.00002 
+            *H2:    0.01057 
+            H2O:    0.12083 
+            *NO:    0.01443 
+            NO2:    0.00001 
+            *N2:    0.57939 
+             *O:    0.00435 
+            *OH:    0.01926 
+            *O2:    0.01951 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   6.780000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      7.85048750e-03
+               *H      7.69408948e-02      0.00000000e+00      9.88957516e-03
+               *N      1.34844867e-02      4.54413262e-02      4.13337632e-02
+               *O      0.00000000e+00      2.27206631e-02      1.98002694e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    3118.768     -17.193     -11.109     -12.834     -15.431
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    6.78000  %FUEL= 12.853470  R,EQ.RATIO= 1.042701  PHI,EQ.RATIO= 1.042701
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    3118.77
+    RHO(kg/m^3):     3.2991
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -156.15
+       G(kJ/kg):   -28027.4
+     S(kJ/kg-K):     9.2282
+
+        M (1/n):     28.517
+     (dLV/dLP)t:   -1.01555
+     (dLV/dLT)p:     1.3309
+    Cp(kJ/kg-K):     3.6182
+         Gammas:     1.1457
+   SON VEL(m/s):     1020.7
+
+ MOLE FRACTIONS
+
+            *CO:    0.08567 
+           *CO2:    0.13820 
+             *H:    0.00404 
+            HO2:    0.00003 
+            *H2:    0.00970 
+            H2O:    0.11952 
+            *NO:    0.01521 
+            NO2:    0.00001 
+            *N2:    0.58173 
+             *O:    0.00452 
+            *OH:    0.01949 
+            *O2:    0.02186 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   6.920000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      7.71171626e-03
+               *H      7.69408948e-02      0.00000000e+00      9.71475944e-03
+               *N      1.34844867e-02      4.54413262e-02      4.14063717e-02
+               *O      0.00000000e+00      2.27206631e-02      1.98518925e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    3112.348     -17.313     -11.147     -12.828     -15.374
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    6.92000  %FUEL= 12.626263  R,EQ.RATIO= 1.021606  PHI,EQ.RATIO= 1.021606
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    3112.35
+    RHO(kg/m^3):     3.3147
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -151.89
+       G(kJ/kg):   -27900.5
+     S(kJ/kg-K):     9.2065
+
+        M (1/n):     28.592
+     (dLV/dLP)t:   -1.01548
+     (dLV/dLT)p:     1.3299
+    Cp(kJ/kg-K):     3.6089
+         Gammas:     1.1455
+   SON VEL(m/s):     1018.2
+
+ MOLE FRACTIONS
+
+            *CO:    0.08054 
+           *CO2:    0.13995 
+             *H:    0.00380 
+            HO2:    0.00003 
+            *H2:    0.00892 
+            H2O:    0.11821 
+            *NO:    0.01594 
+            NO2:    0.00002 
+            *N2:    0.58395 
+             *O:    0.00467 
+            *OH:    0.01965 
+            *O2:    0.02429 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   7.060000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      7.57776585e-03
+               *H      7.69408948e-02      0.00000000e+00      9.54601672e-03
+               *N      1.34844867e-02      4.54413262e-02      4.14764577e-02
+               *O      0.00000000e+00      2.27206631e-02      1.99017223e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    3105.246     -17.429     -11.184     -12.822     -15.321
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    7.06000  %FUEL= 12.406948  R,EQ.RATIO= 1.001348  PHI,EQ.RATIO= 1.001348
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    3105.25
+    RHO(kg/m^3):     3.3305
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -147.59
+       G(kJ/kg):   -27769.4
+     S(kJ/kg-K):     9.1853
+
+        M (1/n):     28.663
+     (dLV/dLP)t:   -1.01533
+     (dLV/dLT)p:     1.3272
+    Cp(kJ/kg-K):     3.5904
+         Gammas:     1.1455
+   SON VEL(m/s):     1015.8
+
+ MOLE FRACTIONS
+
+            *CO:    0.07571 
+           *CO2:    0.14149 
+             *H:    0.00358 
+            HO2:    0.00003 
+            *H2:    0.00822 
+            H2O:    0.11691 
+            *NO:    0.01664 
+            NO2:    0.00002 
+            *N2:    0.58608 
+             *O:    0.00479 
+            *OH:    0.01975 
+            *O2:    0.02678 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   7.200000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      7.44838936e-03
+               *H      7.69408948e-02      0.00000000e+00      9.38303595e-03
+               *N      1.34844867e-02      4.54413262e-02      4.15441506e-02
+               *O      0.00000000e+00      2.27206631e-02      1.99498505e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    3097.548     -17.543     -11.220     -12.816     -15.270
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    7.20000  %FUEL= 12.195122  R,EQ.RATIO= 0.981877  PHI,EQ.RATIO= 0.981877
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    3097.55
+    RHO(kg/m^3):     3.3465
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -143.27
+       G(kJ/kg):   -27634.7
+     S(kJ/kg-K):     9.1646
+
+        M (1/n):     28.730
+     (dLV/dLP)t:   -1.01511
+     (dLV/dLT)p:     1.3232
+    Cp(kJ/kg-K):     3.5641
+         Gammas:     1.1456
+   SON VEL(m/s):     1013.4
+
+ MOLE FRACTIONS
+
+            *CO:    0.07115 
+           *CO2:    0.14284 
+             *H:    0.00336 
+            HO2:    0.00003 
+            *H2:    0.00758 
+            H2O:    0.11561 
+            *NO:    0.01729 
+            NO2:    0.00002 
+            *N2:    0.58811 
+             *O:    0.00489 
+            *OH:    0.01978 
+            *O2:    0.02932 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   7.340000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      7.32335644e-03
+               *H      7.69408948e-02      0.00000000e+00      9.22552695e-03
+               *N      1.34844867e-02      4.54413262e-02      4.16095708e-02
+               *O      0.00000000e+00      2.27206631e-02      1.99963630e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    3089.323     -17.654     -11.255     -12.809     -15.223
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    7.34000  %FUEL= 11.990408  R,EQ.RATIO= 0.963149  PHI,EQ.RATIO= 0.963149
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    3089.32
+    RHO(kg/m^3):     3.3628
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -138.93
+       G(kJ/kg):   -27497.1
+     S(kJ/kg-K):     9.1445
+
+        M (1/n):     28.793
+     (dLV/dLP)t:   -1.01483
+     (dLV/dLT)p:     1.3180
+    Cp(kJ/kg-K):     3.5312
+         Gammas:     1.1458
+   SON VEL(m/s):     1011.0
+
+ MOLE FRACTIONS
+
+            *CO:    0.06686 
+           *CO2:    0.14400 
+             *H:    0.00315 
+            HO2:    0.00003 
+            *H2:    0.00700 
+            H2O:    0.11433 
+            *NO:    0.01789 
+            NO2:    0.00002 
+            *N2:    0.59006 
+             *O:    0.00497 
+            *OH:    0.01976 
+            *O2:    0.03191 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   7.480000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      7.20245197e-03
+               *H      7.69408948e-02      0.00000000e+00      9.07321872e-03
+               *N      1.34844867e-02      4.54413262e-02      4.16728309e-02
+               *O      0.00000000e+00      2.27206631e-02      2.00413396e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    3080.634     -17.763     -11.289     -12.802     -15.178
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    7.48000  %FUEL= 11.792453  R,EQ.RATIO= 0.945122  PHI,EQ.RATIO= 0.945122
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    3080.63
+    RHO(kg/m^3):     3.3792
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -134.60
+       G(kJ/kg):   -27357.1
+     S(kJ/kg-K):     9.1248
+
+        M (1/n):     28.852
+     (dLV/dLP)t:   -1.01451
+     (dLV/dLT)p:     1.3119
+    Cp(kJ/kg-K):     3.4929
+         Gammas:     1.1461
+   SON VEL(m/s):     1008.7
+
+ MOLE FRACTIONS
+
+            *CO:    0.06281 
+           *CO2:    0.14500 
+             *H:    0.00296 
+            HO2:    0.00003 
+            *H2:    0.00648 
+            H2O:    0.11307 
+            *NO:    0.01846 
+            NO2:    0.00002 
+            *N2:    0.59192 
+            N2O:    0.00001 
+             *O:    0.00503 
+            *OH:    0.01970 
+            *O2:    0.03453 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   7.620000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      7.08547480e-03
+               *H      7.69408948e-02      0.00000000e+00      8.92585786e-03
+               *N      1.34844867e-02      4.54413262e-02      4.17340362e-02
+               *O      0.00000000e+00      2.27206631e-02      2.00848553e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    3071.535     -17.870     -11.322     -12.795     -15.135
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    7.62000  %FUEL= 11.600928  R,EQ.RATIO= 0.927758  PHI,EQ.RATIO= 0.927758
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    3071.53
+    RHO(kg/m^3):     3.3958
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -130.26
+       G(kJ/kg):   -27215.1
+     S(kJ/kg-K):     9.1056
+
+        M (1/n):     28.908
+     (dLV/dLP)t:   -1.01415
+     (dLV/dLT)p:     1.3049
+    Cp(kJ/kg-K):     3.4501
+         Gammas:     1.1465
+   SON VEL(m/s):     1006.4
+
+ MOLE FRACTIONS
+
+            *CO:    0.05899 
+           *CO2:    0.14584 
+             *H:    0.00277 
+            HO2:    0.00003 
+            *H2:    0.00599 
+            H2O:    0.11182 
+            *NO:    0.01898 
+            NO2:    0.00002 
+            *N2:    0.59370 
+            N2O:    0.00001 
+             *O:    0.00506 
+            *OH:    0.01959 
+            *O2:    0.03718 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   7.760000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      6.97223661e-03
+               *H      7.69408948e-02      0.00000000e+00      8.78320716e-03
+               *N      1.34844867e-02      4.54413262e-02      4.17932851e-02
+               *O      0.00000000e+00      2.27206631e-02      2.01269801e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    3062.070     -17.976     -11.355     -12.788     -15.094
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    7.76000  %FUEL= 11.415525  R,EQ.RATIO= 0.911020  PHI,EQ.RATIO= 0.911020
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    3062.07
+    RHO(kg/m^3):     3.4125
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -125.94
+       G(kJ/kg):   -27071.6
+     S(kJ/kg-K):     9.0869
+
+        M (1/n):     28.960
+     (dLV/dLP)t:   -1.01376
+     (dLV/dLT)p:     1.2973
+    Cp(kJ/kg-K):     3.4036
+         Gammas:     1.1471
+   SON VEL(m/s):     1004.2
+
+ MOLE FRACTIONS
+
+            *CO:    0.05539 
+           *CO2:    0.14653 
+             *H:    0.00259 
+            HO2:    0.00003 
+            *H2:    0.00555 
+            H2O:    0.11059 
+            *NO:    0.01947 
+            NO2:    0.00003 
+            *N2:    0.59542 
+            N2O:    0.00001 
+             *O:    0.00508 
+            *OH:    0.01944 
+            *O2:    0.03986 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   7.900000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      6.86256098e-03
+               *H      7.69408948e-02      0.00000000e+00      8.64504435e-03
+               *N      1.34844867e-02      4.54413262e-02      4.18506700e-02
+               *O      0.00000000e+00      2.27206631e-02      2.01677796e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    3052.280     -18.080     -11.387     -12.781     -15.055
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    7.90000  %FUEL= 11.235955  R,EQ.RATIO= 0.894875  PHI,EQ.RATIO= 0.894875
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    3052.28
+    RHO(kg/m^3):     3.4293
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -121.63
+       G(kJ/kg):   -26926.8
+     S(kJ/kg-K):     9.0686
+
+        M (1/n):     29.010
+     (dLV/dLP)t:   -1.01334
+     (dLV/dLT)p:     1.2892
+    Cp(kJ/kg-K):     3.3543
+         Gammas:     1.1477
+   SON VEL(m/s):     1002.0
+
+ MOLE FRACTIONS
+
+            *CO:    0.05199 
+           *CO2:    0.14709 
+             *H:    0.00243 
+            HO2:    0.00004 
+            *H2:    0.00515 
+            H2O:    0.10938 
+            *NO:    0.01991 
+            NO2:    0.00003 
+            *N2:    0.59707 
+            N2O:    0.00001 
+             *O:    0.00508 
+            *OH:    0.01926 
+            *O2:    0.04256 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   8.040000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      6.75628238e-03
+               *H      7.69408948e-02      0.00000000e+00      8.51116092e-03
+               *N      1.34844867e-02      4.54413262e-02      4.19062775e-02
+               *O      0.00000000e+00      2.27206631e-02      2.02073154e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    3042.200     -18.183     -11.418     -12.773     -15.018
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    8.04000  %FUEL= 11.061947  R,EQ.RATIO= 0.879293  PHI,EQ.RATIO= 0.879293
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    3042.20
+    RHO(kg/m^3):     3.4463
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -117.33
+       G(kJ/kg):   -26781.0
+     S(kJ/kg-K):     9.0508
+
+        M (1/n):     29.057
+     (dLV/dLP)t:   -1.01291
+     (dLV/dLT)p:     1.2806
+    Cp(kJ/kg-K):     3.3029
+         Gammas:     1.1483
+   SON VEL(m/s):      999.8
+
+ MOLE FRACTIONS
+
+            *CO:    0.04879 
+           *CO2:    0.14752 
+             *H:    0.00227 
+            HO2:    0.00004 
+            *H2:    0.00478 
+            H2O:    0.10819 
+            *NO:    0.02032 
+            NO2:    0.00003 
+            *N2:    0.59865 
+            N2O:    0.00001 
+             *O:    0.00507 
+            *OH:    0.01906 
+            *O2:    0.04527 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   8.180000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      6.65324540e-03
+               *H      7.69408948e-02      0.00000000e+00      8.38136108e-03
+               *N      1.34844867e-02      4.54413262e-02      4.19601890e-02
+               *O      0.00000000e+00      2.27206631e-02      2.02456453e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    3031.861     -18.285     -11.449     -12.766     -14.982
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    8.18000  %FUEL= 10.893246  R,EQ.RATIO= 0.864244  PHI,EQ.RATIO= 0.864244
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    3031.86
+    RHO(kg/m^3):     3.4633
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -113.06
+       G(kJ/kg):   -26634.5
+     S(kJ/kg-K):     9.0333
+
+        M (1/n):     29.101
+     (dLV/dLP)t:   -1.01246
+     (dLV/dLT)p:     1.2718
+    Cp(kJ/kg-K):     3.2498
+         Gammas:     1.1491
+   SON VEL(m/s):      997.7
+
+ MOLE FRACTIONS
+
+            *CO:    0.04578 
+           *CO2:    0.14784 
+             *H:    0.00212 
+            HO2:    0.00004 
+            *H2:    0.00444 
+            H2O:    0.10702 
+            *NO:    0.02070 
+            NO2:    0.00003 
+            *N2:    0.60017 
+            N2O:    0.00001 
+             *O:    0.00504 
+            *OH:    0.01882 
+            *O2:    0.04799 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   8.320000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      6.55330394e-03
+               *H      7.69408948e-02      0.00000000e+00      8.25546081e-03
+               *N      1.34844867e-02      4.54413262e-02      4.20124807e-02
+               *O      0.00000000e+00      2.27206631e-02      2.02828237e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    3021.289     -18.385     -11.480     -12.758     -14.947
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    8.32000  %FUEL= 10.729614  R,EQ.RATIO= 0.849701  PHI,EQ.RATIO= 0.849701
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    3021.29
+    RHO(kg/m^3):     3.4804
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -108.80
+       G(kJ/kg):   -26487.5
+     S(kJ/kg-K):     9.0162
+
+        M (1/n):     29.143
+     (dLV/dLP)t:   -1.01201
+     (dLV/dLT)p:     1.2628
+    Cp(kJ/kg-K):     3.1956
+         Gammas:     1.1499
+   SON VEL(m/s):      995.6
+
+ MOLE FRACTIONS
+
+            *CO:    0.04293 
+           *CO2:    0.14805 
+             *H:    0.00198 
+            HO2:    0.00004 
+            *H2:    0.00412 
+            H2O:    0.10587 
+            *NO:    0.02104 
+            NO2:    0.00003 
+            *N2:    0.60164 
+            N2O:    0.00001 
+             *O:    0.00500 
+            *OH:    0.01857 
+            *O2:    0.05072 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   8.460000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      6.45632059e-03
+               *H      7.69408948e-02      0.00000000e+00      8.13328697e-03
+               *N      1.34844867e-02      4.54413262e-02      4.20632247e-02
+               *O      0.00000000e+00      2.27206631e-02      2.03189017e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    3010.509     -18.485     -11.510     -12.750     -14.914
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    8.46000  %FUEL= 10.570825  R,EQ.RATIO= 0.835640  PHI,EQ.RATIO= 0.835640
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    3010.51
+    RHO(kg/m^3):     3.4975
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -104.57
+       G(kJ/kg):   -26340.1
+     S(kJ/kg-K):     8.9996
+
+        M (1/n):     29.182
+     (dLV/dLP)t:   -1.01156
+     (dLV/dLT)p:     1.2537
+    Cp(kJ/kg-K):     3.1408
+         Gammas:     1.1508
+   SON VEL(m/s):      993.5
+
+ MOLE FRACTIONS
+
+            *CO:    0.04026 
+           *CO2:    0.14815 
+             *H:    0.00185 
+            HO2:    0.00004 
+            *H2:    0.00383 
+            H2O:    0.10475 
+            *NO:    0.02134 
+            NO2:    0.00003 
+            *N2:    0.60305 
+            N2O:    0.00001 
+             *O:    0.00495 
+            *OH:    0.01829 
+            *O2:    0.05345 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   8.600000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      6.36216591e-03
+               *H      7.69408948e-02      0.00000000e+00      8.01467654e-03
+               *N      1.34844867e-02      4.54413262e-02      4.21124887e-02
+               *O      0.00000000e+00      2.27206631e-02      2.03539273e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    2999.543     -18.585     -11.539     -12.742     -14.882
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    8.60000  %FUEL= 10.416667  R,EQ.RATIO= 0.822036  PHI,EQ.RATIO= 0.822036
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    2999.54
+    RHO(kg/m^3):     3.5148
+       H(kJ/kg):     753.18
+       U(kJ/kg):    -100.37
+       G(kJ/kg):   -26192.4
+     S(kJ/kg-K):     8.9832
+
+        M (1/n):     29.219
+     (dLV/dLP)t:   -1.01110
+     (dLV/dLT)p:     1.2445
+    Cp(kJ/kg-K):     3.0857
+         Gammas:     1.1517
+   SON VEL(m/s):      991.5
+
+ MOLE FRACTIONS
+
+            *CO:    0.03773 
+           *CO2:    0.14816 
+             *H:    0.00172 
+            HO2:    0.00004 
+            *H2:    0.00357 
+            H2O:    0.10364 
+            *NO:    0.02162 
+            NO2:    0.00004 
+            *N2:    0.60441 
+            N2O:    0.00001 
+             *O:    0.00489 
+            *OH:    0.01800 
+            *O2:    0.05618 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   8.740000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      6.27071794e-03
+               *H      7.69408948e-02      0.00000000e+00      7.89947585e-03
+               *N      1.34844867e-02      4.54413262e-02      4.21603365e-02
+               *O      0.00000000e+00      2.27206631e-02      2.03879461e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    2988.411     -18.683     -11.569     -12.734     -14.851
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    8.74000  %FUEL= 10.266940  R,EQ.RATIO= 0.808869  PHI,EQ.RATIO= 0.808869
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    2988.41
+    RHO(kg/m^3):     3.5320
+       H(kJ/kg):     753.18
+       U(kJ/kg):     -96.19
+       G(kJ/kg):   -26044.7
+     S(kJ/kg-K):     8.9673
+
+        M (1/n):     29.254
+     (dLV/dLP)t:   -1.01064
+     (dLV/dLT)p:     1.2354
+    Cp(kJ/kg-K):     3.0307
+         Gammas:     1.1527
+   SON VEL(m/s):      989.5
+
+ MOLE FRACTIONS
+
+            *CO:    0.03536 
+           *CO2:    0.14808 
+             *H:    0.00161 
+            HO2:    0.00004 
+            *H2:    0.00332 
+            H2O:    0.10255 
+            *NO:    0.02186 
+            NO2:    0.00004 
+            *N2:    0.60572 
+            N2O:    0.00001 
+             *O:    0.00482 
+            *OH:    0.01769 
+            *O2:    0.05891 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   8.880000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      6.18186161e-03
+               *H      7.69408948e-02      0.00000000e+00      7.78753995e-03
+               *N      1.34844867e-02      4.54413262e-02      4.22068282e-02
+               *O      0.00000000e+00      2.27206631e-02      2.04210008e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    2977.130     -18.781     -11.598     -12.726     -14.821
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    8.88000  %FUEL= 10.121457  R,EQ.RATIO= 0.796116  PHI,EQ.RATIO= 0.796116
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    2977.13
+    RHO(kg/m^3):     3.5494
+       H(kJ/kg):     753.18
+       U(kJ/kg):     -92.03
+       G(kJ/kg):   -25897.1
+     S(kJ/kg-K):     8.9517
+
+        M (1/n):     29.287
+     (dLV/dLP)t:   -1.01020
+     (dLV/dLT)p:     1.2263
+    Cp(kJ/kg-K):     2.9760
+         Gammas:     1.1538
+   SON VEL(m/s):      987.5
+
+ MOLE FRACTIONS
+
+            *CO:    0.03313 
+           *CO2:    0.14792 
+             *H:    0.00150 
+            HO2:    0.00004 
+            *H2:    0.00309 
+            H2O:    0.10149 
+            *NO:    0.02207 
+            NO2:    0.00004 
+            *N2:    0.60698 
+            N2O:    0.00001 
+             *O:    0.00474 
+            *OH:    0.01737 
+            *O2:    0.06163 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   9.020000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      6.09548830e-03
+               *H      7.69408948e-02      0.00000000e+00      7.67873201e-03
+               *N      1.34844867e-02      4.54413262e-02      4.22520208e-02
+               *O      0.00000000e+00      2.27206631e-02      2.04531318e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    2965.717     -18.879     -11.626     -12.718     -14.792
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    9.02000  %FUEL=  9.980040  R,EQ.RATIO= 0.783760  PHI,EQ.RATIO= 0.783760
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    2965.72
+    RHO(kg/m^3):     3.5668
+       H(kJ/kg):     753.18
+       U(kJ/kg):     -87.91
+       G(kJ/kg):   -25749.5
+     S(kJ/kg-K):     8.9364
+
+        M (1/n):     29.317
+     (dLV/dLP)t:   -1.00975
+     (dLV/dLT)p:     1.2173
+    Cp(kJ/kg-K):     2.9218
+         Gammas:     1.1548
+   SON VEL(m/s):      985.6
+
+ MOLE FRACTIONS
+
+            *CO:    0.03102 
+           *CO2:    0.14768 
+             *H:    0.00139 
+            HO2:    0.00004 
+            *H2:    0.00288 
+            H2O:    0.10044 
+            *NO:    0.02226 
+            NO2:    0.00004 
+            *N2:    0.60820 
+            N2O:    0.00001 
+             *O:    0.00465 
+            *OH:    0.01704 
+            *O2:    0.06434 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   9.160000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      6.01149535e-03
+               *H      7.69408948e-02      0.00000000e+00      7.57292271e-03
+               *N      1.34844867e-02      4.54413262e-02      4.22959679e-02
+               *O      0.00000000e+00      2.27206631e-02      2.04843773e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    2954.186     -18.976     -11.655     -12.710     -14.764
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    9.16000  %FUEL=  9.842520  R,EQ.RATIO= 0.771781  PHI,EQ.RATIO= 0.771781
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    2954.19
+    RHO(kg/m^3):     3.5843
+       H(kJ/kg):     753.18
+       U(kJ/kg):     -83.81
+       G(kJ/kg):   -25602.3
+     S(kJ/kg-K):     8.9214
+
+        M (1/n):     29.346
+     (dLV/dLP)t:   -1.00932
+     (dLV/dLT)p:     1.2084
+    Cp(kJ/kg-K):     2.8683
+         Gammas:     1.1560
+   SON VEL(m/s):      983.6
+
+ MOLE FRACTIONS
+
+            *CO:    0.02905 
+           *CO2:    0.14737 
+             *H:    0.00130 
+            HO2:    0.00004 
+            *H2:    0.00268 
+            H2O:    0.09942 
+            *NO:    0.02242 
+            NO2:    0.00004 
+            *N2:    0.60938 
+            N2O:    0.00001 
+             *O:    0.00456 
+            *OH:    0.01670 
+            *O2:    0.06704 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   9.300000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      5.92978570e-03
+               *H      7.69408948e-02      0.00000000e+00      7.46998978e-03
+               *N      1.34844867e-02      4.54413262e-02      4.23387204e-02
+               *O      0.00000000e+00      2.27206631e-02      2.05147735e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    2942.552     -19.072     -11.683     -12.702     -14.736
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    9.30000  %FUEL=  9.708738  R,EQ.RATIO= 0.760163  PHI,EQ.RATIO= 0.760163
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    2942.55
+    RHO(kg/m^3):     3.6018
+       H(kJ/kg):     753.18
+       U(kJ/kg):     -79.74
+       G(kJ/kg):   -25455.3
+     S(kJ/kg-K):     8.9067
+
+        M (1/n):     29.374
+     (dLV/dLP)t:   -1.00890
+     (dLV/dLT)p:     1.1998
+    Cp(kJ/kg-K):     2.8157
+         Gammas:     1.1571
+   SON VEL(m/s):      981.7
+
+ MOLE FRACTIONS
+
+            *CO:    0.02719 
+           *CO2:    0.14699 
+             *H:    0.00121 
+            HO2:    0.00004 
+            *H2:    0.00250 
+            H2O:    0.09841 
+            *NO:    0.02255 
+            NO2:    0.00004 
+            *N2:    0.61051 
+            N2O:    0.00001 
+             *O:    0.00446 
+            *OH:    0.01635 
+            *O2:    0.06973 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   9.440000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      5.85026750e-03
+               *H      7.69408948e-02      0.00000000e+00      7.36981750e-03
+               *N      1.34844867e-02      4.54413262e-02      4.23803262e-02
+               *O      0.00000000e+00      2.27206631e-02      2.05443544e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    2930.828     -19.169     -11.711     -12.693     -14.709
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    9.44000  %FUEL=  9.578544  R,EQ.RATIO= 0.748889  PHI,EQ.RATIO= 0.748889
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    2930.83
+    RHO(kg/m^3):     3.6193
+       H(kJ/kg):     753.18
+       U(kJ/kg):     -75.70
+       G(kJ/kg):   -25308.8
+     S(kJ/kg-K):     8.8924
+
+        M (1/n):     29.399
+     (dLV/dLP)t:   -1.00849
+     (dLV/dLT)p:     1.1913
+    Cp(kJ/kg-K):     2.7642
+         Gammas:     1.1584
+   SON VEL(m/s):      979.9
+
+ MOLE FRACTIONS
+
+            *CO:    0.02544 
+           *CO2:    0.14655 
+             *H:    0.00112 
+            HO2:    0.00004 
+            *H2:    0.00233 
+            H2O:    0.09742 
+            *NO:    0.02266 
+            NO2:    0.00004 
+            *N2:    0.61161 
+            N2O:    0.00001 
+             *O:    0.00436 
+            *OH:    0.01600 
+            *O2:    0.07241 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   9.580000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      5.77285376e-03
+               *H      7.69408948e-02      0.00000000e+00      7.27229629e-03
+               *N      1.34844867e-02      4.54413262e-02      4.24208309e-02
+               *O      0.00000000e+00      2.27206631e-02      2.05731524e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    2919.025     -19.264     -11.739     -12.685     -14.684
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    9.58000  %FUEL=  9.451796  R,EQ.RATIO= 0.737945  PHI,EQ.RATIO= 0.737945
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    2919.03
+    RHO(kg/m^3):     3.6369
+       H(kJ/kg):     753.18
+       U(kJ/kg):     -71.69
+       G(kJ/kg):   -25162.7
+     S(kJ/kg-K):     8.8783
+
+        M (1/n):     29.423
+     (dLV/dLP)t:   -1.00809
+     (dLV/dLT)p:     1.1830
+    Cp(kJ/kg-K):     2.7139
+         Gammas:     1.1596
+   SON VEL(m/s):      978.0
+
+ MOLE FRACTIONS
+
+            *CO:    0.02380 
+           *CO2:    0.14606 
+             *H:    0.00104 
+            HO2:    0.00004 
+            *H2:    0.00217 
+            H2O:    0.09645 
+            *NO:    0.02275 
+            NO2:    0.00005 
+            *N2:    0.61267 
+            N2O:    0.00001 
+             *O:    0.00425 
+            *OH:    0.01564 
+            *O2:    0.07506 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   9.720000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      5.69746201e-03
+               *H      7.69408948e-02      0.00000000e+00      7.17732227e-03
+               *N      1.34844867e-02      4.54413262e-02      4.24602777e-02
+               *O      0.00000000e+00      2.27206631e-02      2.06011982e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    2907.155     -19.360     -11.767     -12.677     -14.658
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    9.72000  %FUEL=  9.328358  R,EQ.RATIO= 0.727316  PHI,EQ.RATIO= 0.727316
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    2907.16
+    RHO(kg/m^3):     3.6546
+       H(kJ/kg):     753.18
+       U(kJ/kg):     -67.71
+       G(kJ/kg):   -25017.2
+     S(kJ/kg-K):     8.8645
+
+        M (1/n):     29.446
+     (dLV/dLP)t:   -1.00770
+     (dLV/dLT)p:     1.1749
+    Cp(kJ/kg-K):     2.6647
+         Gammas:     1.1609
+   SON VEL(m/s):      976.2
+
+ MOLE FRACTIONS
+
+            *CO:    0.02225 
+           *CO2:    0.14551 
+             *H:    0.00097 
+            HO2:    0.00004 
+            *H2:    0.00203 
+            H2O:    0.09549 
+            *NO:    0.02281 
+            NO2:    0.00005 
+            *N2:    0.61370 
+            N2O:    0.00001 
+             *O:    0.00415 
+            *OH:    0.01528 
+            *O2:    0.07770 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =   9.860000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      5.62401406e-03
+               *H      7.69408948e-02      0.00000000e+00      7.08479694e-03
+               *N      1.34844867e-02      4.54413262e-02      4.24987074e-02
+               *O      0.00000000e+00      2.27206631e-02      2.06285210e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    2895.229     -19.456     -11.794     -12.668     -14.634
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=    9.86000  %FUEL=  9.208103  R,EQ.RATIO= 0.716989  PHI,EQ.RATIO= 0.716989
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    2895.23
+    RHO(kg/m^3):     3.6723
+       H(kJ/kg):     753.18
+       U(kJ/kg):     -63.76
+       G(kJ/kg):   -24872.3
+     S(kJ/kg-K):     8.8509
+
+        M (1/n):     29.467
+     (dLV/dLP)t:   -1.00732
+     (dLV/dLT)p:     1.1671
+    Cp(kJ/kg-K):     2.6169
+         Gammas:     1.1622
+   SON VEL(m/s):      974.4
+
+ MOLE FRACTIONS
+
+            *CO:    0.02081 
+           *CO2:    0.14492 
+             *H:    0.00090 
+            HO2:    0.00004 
+            *H2:    0.00189 
+            H2O:    0.09456 
+            *NO:    0.02286 
+            NO2:    0.00005 
+            *N2:    0.61469 
+            N2O:    0.00001 
+             *O:    0.00403 
+            *OH:    0.01492 
+            *O2:    0.08033 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+ O/F =  10.000000
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -3.10298371e+02      2.24214104e+02      9.05859848e+01
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+               *C      6.10767927e-02      0.00000000e+00      5.55243570e-03
+               *H      7.69408948e-02      0.00000000e+00      6.99462680e-03
+               *N      1.34844867e-02      4.54413262e-02      4.25361589e-02
+               *O      0.00000000e+00      2.27206631e-02      2.06551483e-02
+
+ POINT ITN      T             C           H           N           O        
+   1    3    2883.256     -19.551     -11.821     -12.660     -14.610
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                        PRESSURES
+
+ CASE =        CEAM-HP1
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                                          kJ/kg         K
+     fuel:                ABS            100.0000000     -2579.979    300.000
+     oxid:                N2O            100.0000000      1864.230    300.000
+
+ O/F=   10.00000  %FUEL=  9.090909  R,EQ.RATIO= 0.706951  PHI,EQ.RATIO= 0.706951
+
+ THERMODYNAMIC PROPERTIES
+
+         P(bar):    30.0000
+           T(K):    2883.26
+    RHO(kg/m^3):     3.6900
+       H(kJ/kg):     753.18
+       U(kJ/kg):     -59.83
+       G(kJ/kg):   -24728.0
+     S(kJ/kg-K):     8.8376
+
+        M (1/n):     29.486
+     (dLV/dLP)t:   -1.00696
+     (dLV/dLT)p:     1.1596
+    Cp(kJ/kg-K):     2.5704
+         Gammas:     1.1635
+   SON VEL(m/s):      972.6
+
+ MOLE FRACTIONS
+
+            *CO:    0.01945 
+           *CO2:    0.14427 
+             *H:    0.00084 
+            HO2:    0.00004 
+            *H2:    0.00176 
+            H2O:    0.09364 
+            *NO:    0.02288 
+            NO2:    0.00005 
+            *N2:    0.61565 
+            N2O:    0.00001 
+             *O:    0.00392 
+            *OH:    0.01456 
+            *O2:    0.08293 
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000 K 
+
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS

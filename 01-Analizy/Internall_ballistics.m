@@ -18,6 +18,8 @@ interp_pressure = x.output.pressure / 10;
 temperature_matrix = x.output.temperature;
 kappa_matrix = x.output.gamma;
 molar_mass_matrix = x.output.mw;
+cp_matrix = x.output.cp;
+viscosity_matrix = x.output.viscosity;
 
 %set interpolants
 Combustion_chamber.temperature_interp = griddedInterpolant({x.output.oxfl', interp_pressure(1,:)},...
@@ -26,6 +28,10 @@ Combustion_chamber.kappa_interp = griddedInterpolant({x.output.oxfl', interp_pre
     kappa_matrix, 'linear', 'nearest');
 Combustion_chamber.molar_mass_interp = griddedInterpolant({x.output.oxfl', interp_pressure(1,:)},...
     molar_mass_matrix, 'linear', 'nearest');
+Combustion_chamber.cp_interp = griddedInterpolant({x.output.oxfl', interp_pressure(1,:)},...
+    cp_matrix, 'linear', 'nearest');
+Combustion_chamber.viscosity_interp = griddedInterpolant({x.output.oxfl', interp_pressure(1,:)},...
+    viscosity_matrix, 'linear', 'nearest');
 
 %Combustion chamber conditions assumed
 Combustion_chamber.pressure = 1.3;
@@ -44,6 +50,11 @@ Combustion_chamber.kappa = Combustion_chamber.kappa_interp(Combustion_chamber.of
     Combustion_chamber.pressure);
 Combustion_chamber.molar_mass = Combustion_chamber.molar_mass_interp(Combustion_chamber.of,...
     Combustion_chamber.pressure);
+Combustion_chamber.cp = Combustion_chamber.cp_interp(Combustion_chamber.of,...
+    Combustion_chamber.pressure);
+Combustion_chamber.viscosity = Combustion_chamber.viscosity_interp(Combustion_chamber.of,...
+    Combustion_chamber.pressure);
+
 Combustion_chamber.gas_constant = 8314 / Combustion_chamber.molar_mass;
 
 Combustion_chamber.thrust_coef = sqrt(2 * Combustion_chamber.kappa ^ 2 / (Combustion_chamber.kappa...
